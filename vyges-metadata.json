@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vyges.com/schema/v1/vyges-metadata.schema.json",
+  "x-version": "1.0.0",
+  "name": "caliptra-tlul",
+  "version": "0.1.0",
+  "description": "IP imported from https://github.com/chipsalliance/caliptra-rtl",
+  "license": "Apache-2.0",
+  "maturity": "draft",
+  "target": [
+    "asic",
+    "fpga"
+  ],
+  "design_type": [
+    "digital"
+  ],
+  "created": "2026-04-01T05:09:18Z",
+  "updated": "2026-04-01T05:09:18Z",
+  "source": {
+    "type": "git",
+    "url": "https://github.com/chipsalliance/caliptra-rtl",
+    "commit": "82eed18aedc14b03bfb8d9dce873c866e1eda22e",
+    "private": false,
+    "indexing": true
+  },
+  "maintainers": [
+    {
+      "name": "Vyges",
+      "email": "team@vyges.com",
+      "github": "vyges"
+    }
+  ],
+  "interfaces": [],
+  "parameters": [],
+  "architecture": {
+    "type": "peripheral",
+    "features": []
+  },
+  "categories": [
+    {
+      "main_category": "Miscellaneous",
+      "sub_category": "Custom Accelerators"
+    }
+  ],
+  "trust": {
+    "verification_level": "unknown",
+    "maintained": true
+  },
+  "_note": "AI enrichment failed. Manual population needed.",
+  "meta": {
+    "template": {
+      "generator": "upstream-sync-fallback",
+      "generated_at": "2026-04-01T05:09:18Z"
+    },
+    "schema": {
+      "version": "1.0.0"
+    }
+  }
+}
