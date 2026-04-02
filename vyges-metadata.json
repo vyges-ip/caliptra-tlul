@@ -14,7 +14,7 @@
     "digital"
   ],
   "created": "2026-04-01T05:09:18Z",
-  "updated": "2026-04-01T05:09:18Z",
+  "updated": "2026-04-02T04:30:00Z",
   "source": {
     "type": "git",
     "url": "https://github.com/chipsalliance/caliptra-rtl",
@@ -29,8 +29,146 @@
       "github": "vyges"
     }
   ],
-  "interfaces": [],
-  "parameters": [],
+  "interfaces": [
+    {
+      "type": "clock",
+      "signals": [
+        {
+          "name": "clk_i",
+          "direction": "input",
+          "width": 1
+        }
+      ]
+    },
+    {
+      "type": "reset",
+      "signals": [
+        {
+          "name": "rst_ni",
+          "direction": "input",
+          "width": 1
+        }
+      ]
+    },
+    {
+      "type": "bus",
+      "protocol": "TL-UL",
+      "signals": [
+        {
+          "name": "tl_i",
+          "direction": "input",
+          "type": "tl_h2d_t"
+        },
+        {
+          "name": "tl_o",
+          "direction": "output",
+          "type": "tl_d2h_t"
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "name": "CmdIntgCheck",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "EnableRspIntgGen",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "EnableDataIntgGen",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "RegAw",
+      "type": "int",
+      "default": "8"
+    },
+    {
+      "name": "RegDw",
+      "type": "int",
+      "default": "32"
+    },
+    {
+      "name": "AccessLatency",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "SramAw",
+      "type": "int",
+      "default": "12"
+    },
+    {
+      "name": "SramDw",
+      "type": "int",
+      "default": "32"
+    },
+    {
+      "name": "Outstanding",
+      "type": "bit",
+      "default": "1"
+    },
+    {
+      "name": "SramBusBankAW",
+      "type": "int",
+      "default": "12"
+    },
+    {
+      "name": "ByteAccess",
+      "type": "bit",
+      "default": "1"
+    },
+    {
+      "name": "ErrOnWrite",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "ErrOnRead",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "EnableDataIntgPt",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "SecFifoPtr",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "EnableReadback",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "DataXorAddr",
+      "type": "bit",
+      "default": "0"
+    },
+    {
+      "name": "ADDR_WIDTH",
+      "type": "int",
+      "default": "TL_AW"
+    },
+    {
+      "name": "DATA_WIDTH",
+      "type": "int",
+      "default": "TL_DW"
+    },
+    {
+      "name": "MASK_WIDTH",
+      "type": "int",
+      "default": "DATA_WIDTH >> 3"
+    }
+  ],
   "architecture": {
     "type": "peripheral",
     "features": []
@@ -54,5 +192,50 @@
     "schema": {
       "version": "1.0.0"
     }
-  }
+  },
+  "rtl_files": [
+    "rtl/caliptra_tlul_adapter_reg.sv",
+    "rtl/caliptra_tlul_adapter_sram.sv",
+    "rtl/caliptra_tlul_adapter_vh.sv",
+    "rtl/caliptra_tlul_cmd_intg_chk.sv",
+    "rtl/caliptra_tlul_cmd_intg_gen.sv",
+    "rtl/caliptra_tlul_data_integ_dec.sv",
+    "rtl/caliptra_tlul_data_integ_enc.sv",
+    "rtl/caliptra_tlul_err.sv",
+    "rtl/caliptra_tlul_err_resp.sv",
+    "rtl/caliptra_tlul_fifo_sync.sv",
+    "rtl/caliptra_tlul_pkg.sv",
+    "rtl/caliptra_tlul_rsp_intg_chk.sv",
+    "rtl/caliptra_tlul_rsp_intg_gen.sv",
+    "rtl/caliptra_tlul_socket_1n.sv",
+    "rtl/caliptra_tlul_sram_byte.sv",
+    "rtl/caliptra_tlul_adapter_reg.sv",
+    "rtl/caliptra_tlul_adapter_sram.sv",
+    "rtl/caliptra_tlul_adapter_vh.sv",
+    "rtl/caliptra_tlul_cmd_intg_chk.sv",
+    "rtl/caliptra_tlul_cmd_intg_gen.sv",
+    "rtl/caliptra_tlul_data_integ_dec.sv",
+    "rtl/caliptra_tlul_data_integ_enc.sv",
+    "rtl/caliptra_tlul_err.sv",
+    "rtl/caliptra_tlul_err_resp.sv",
+    "rtl/caliptra_tlul_fifo_sync.sv",
+    "rtl/caliptra_tlul_pkg.sv",
+    "rtl/caliptra_tlul_rsp_intg_chk.sv",
+    "rtl/caliptra_tlul_rsp_intg_gen.sv",
+    "rtl/caliptra_tlul_socket_1n.sv",
+    "rtl/caliptra_tlul_sram_byte.sv"
+  ],
+  "rtl_quality": {
+    "module_prefixed": true,
+    "defines_prefixed": true,
+    "header_guards": false,
+    "one_module_per_file": true,
+    "self_contained_includes": false,
+    "no_translate_pragmas": true,
+    "lint_clean": false,
+    "no_casex": true,
+    "width_clean": false,
+    "no_sv_keyword_conflicts": true
+  },
+  "defines": []
 }
