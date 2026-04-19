@@ -3,7 +3,7 @@ upstream:
   type: "monorepo"
   source: https://github.com/chipsalliance/caliptra-rtl
   path: src/caliptra_tlul
-  commit: f4f60f90852635b9e92bb9d23a07b977f6e7ba2c
+  commit: 90de1a213200062b845f84d92c9889a5cd182b24
   extracted_at: "2026-04-01T04:57:00Z"
 import:
   rtl:
@@ -14,5 +14,4 @@ import:
 license:
   spdx: Apache-2.0
   file: LICENSE
-
 metadata_locked: true
